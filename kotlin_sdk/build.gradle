@@ -5,8 +5,6 @@ plugins {
 	id 'com.diffplug.spotless' version '6.8.0'
 }
 
-def compose_version = '1.2.0'
-
 android {
 	compileSdk 33
 	defaultConfig {
@@ -35,7 +33,7 @@ android {
 		compose true
 	}
 	composeOptions {
-		kotlinCompilerExtensionVersion compose_version
+		kotlinCompilerExtensionVersion '1.2.0'
 	}
 	packagingOptions {
 		resources {
@@ -46,13 +44,13 @@ android {
 
 dependencies {
 	testImplementation 'junit:junit:4.13.2'
-	api "androidx.compose.animation:animation-graphics:$compose_version"
-	api "androidx.compose.ui:ui:$compose_version"
-	api "androidx.compose.material:material:$compose_version"
-	api "com.google.accompanist:accompanist-systemuicontroller:0.23.1"
-	api 'com.github.paylike:kotlin_engine:1.0.+'
+	api 'androidx.compose.animation:animation-graphics:1.2.0'
+	api 'androidx.compose.ui:ui:1.2.0'
+	api 'androidx.compose.material:material:1.2.0'
+	api 'com.google.accompanist:accompanist-systemuicontroller:0.30.0'
+	api 'com.github.paylike:kotlin_engine:1.0.4'
 
-	api 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+	api 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
 	api 'androidx.activity:activity-compose:1.5.1'
 }
 
@@ -80,7 +78,7 @@ afterEvaluate {
 
 				groupId = 'com.github.paylike'
 				artifactId = 'kotlin_sdk'
-				version = '1.0.0'
+				version = '1.0.1'
 			}
 		}
 	}
